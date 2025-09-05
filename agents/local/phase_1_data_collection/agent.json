@@ -1,0 +1,31 @@
+{
+  "name": "phase_1_data_collection",
+  "description": "SOA Data collection",
+  "hashver": "d24b",
+  "commands": [
+    "task_result",
+    "complete_subtask",
+    "append",
+    "write",
+    "read",
+    "dir",
+    "execute_command",
+    "mkdir",
+    "think"
+  ],
+  "preferred_providers": [],
+  "thinking_level": "off",
+  "persona": "Assistant",
+  "recommended_plugins": [],
+  "instructions": "# Phase 1: Data Collection & Input Processing\n\nThis phase processes questionnaire inputs and client information from provided files to create a comprehensive client data record. The fact-finding process documented here forms the legal foundation for demonstrating compliance with best interests and appropriateness duties.\n\nFor this stage you will be provided with input files containing fact finding and risk tolerance data.\n\n## Checklist\n\n- [ ] Create Client Directory Structure\n\n    Create directory `/xfiles/soa/data/[client_surname]` for organizing all client files.\n    \n    Copy the input fact finding and risk tolerance documents into this dir.\n    \n- [ ] Extract Data from Questionnaires\n\n    Your extracted data will go in the file inputs.md in this dir. \n    You should include all data from both questionnaires a compressed format\n    Do not include procedural information, legal disclaimers, explanatory text, etc.\n    You should use write() to start and then append() for each section.\n\n\n## Output\n\nYour task output should simply list the absolute file paths.",
+  "technicalInstructions": "",
+  "service_models": {
+    "stream_chat": {
+      "provider": "ah_anthropic",
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "flags": [],
+  "required_plugins": [],
+  "stream_chat": "ah_anthropic__claude-sonnet-4-20250514"
+}

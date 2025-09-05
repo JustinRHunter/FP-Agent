@@ -1,0 +1,31 @@
+{
+  "name": "insurance_3_coveragestrategy",
+  "description": "Insurance Coverage Strategy",
+  "hashver": "ins03",
+  "commands": [
+    "task_result",
+    "complete_subtask",
+    "append",
+    "write",
+    "read",
+    "dir",
+    "execute_command",
+    "mkdir",
+    "think"
+  ],
+  "preferred_providers": [],
+  "thinking_level": "off",
+  "persona": "Assistant",
+  "recommended_plugins": [],
+  "instructions": "# Insurance Phase 3: Coverage Strategy Development\n\nThis phase develops the insurance coverage strategy based on client risk profile, objectives, and Phase 2 analysis results. Focus on insurance-specific strategy decisions: coverage types, ownership structure, premium types, and implementation approach. Use streamlined analysis focused on material insurance decisions.\n\n## Technical Considerations\n- Use write() then append() for chunks (max 500 lines)\n- Use absolute paths for all file operations\n- Mark subtasks as completed as you progress\n- Keep analysis concise and insurance-focused\n\n## Input and Analysis\n\nRead the inputs.md and /xfiles/soa/data/[client_surname]/insurance//xfiles/soa/data/[client_surname]/insurance/analysis.md files from previous phases.\n\n## Checklist\n\n- [ ] Review Insurance Analysis\n\n    Read the /xfiles/soa/data/[client_surname]/insurance//xfiles/soa/data/[client_surname]/insurance/analysis.md file to understand coverage needs and risk assessment.\n\n- [ ] Develop Coverage Strategy Framework\n\n    Determine optimal insurance structure:\n    - Coverage types required (life, TPD, trauma, income protection)\n    - Ownership structure (personal vs superannuation)\n    - Premium type selection (stepped vs level)\n    - Provider consolidation strategy\n\n- [ ] Design Implementation Approach\n\n    Develop implementation strategy:\n    - Sequencing of policy applications\n    - Underwriting considerations\n    - Existing policy management (keep, replace, or supplement)\n    - Timing and phasing approach\n\n- [ ] Create Tax Optimization Plan\n\n    Analyze tax implications:\n    - Personal vs superannuation ownership tax effects\n    - Income protection premium deductibility\n    - Claim payment taxation\n    - Optimal structure for tax efficiency\n\n- [ ] Document Strategy Rationale\n\n    Create comprehensive `strategy.md` file:\n    - Coverage strategy with rationale\n    - Implementation approach\n    - Tax optimization plan\n    - Key strategic decisions\n    Use write() to start and append() for chunks (max 500 lines).\n\n## Output\n\nYour task output should be the absolute path of the `strategy.md` file.\n\n## Insurance Strategy Focus\n\n**Key Strategic Decisions:**\n- Coverage mix and amounts\n- Ownership structure optimization\n- Premium type selection\n- Provider selection approach\n- Implementation sequencing\n- Tax efficiency considerations\n\n**Exclude:**\n- Investment strategy\n- Portfolio allocation\n- Superannuation investment decisions\n- Complex financial modeling\n\n## Strategy.md Structure\n\n```markdown\n# Insurance Coverage Strategy - [Client Name]\n\n## Executive Summary\n[Key strategic recommendations and approach]\n\n## Coverage Strategy\n### Recommended Coverage Mix\n- Life insurance: $[amount] ([rationale])\n- TPD coverage: $[amount] ([rationale])\n- Income protection: $[amount]/month ([rationale])\n- Trauma coverage: $[amount] ([rationale])\n\n### Ownership Structure\n- Personal ownership: [coverage types]\n- Superannuation ownership: [coverage types]\n- Rationale: [tax efficiency, control, simplicity]\n\n### Premium Strategy\n- Premium type: Stepped/Level ([rationale])\n- Cost projections: $[annual cost]\n- Long-term affordability assessment\n\n## Implementation Approach\n### Application Sequencing\n1. [Priority application sequence]\n2. [Underwriting considerations]\n3. [Timing recommendations]\n\n### Existing Policy Management\n- Keep: [policies]\n- Replace: [policies]\n- Supplement: [additional coverage needed]\n\n## Tax Optimization\n### Ownership Tax Implications\n- Personal ownership: [tax treatment]\n- Superannuation ownership: [tax treatment]\n- Optimal structure: [recommendation]\n\n### Premium Deductibility\n- Income protection: [deductibility]\n- Other premiums: [tax treatment]\n\n## Key Strategic Decisions\n[Summary of material strategic choices with rationale]\n```\n",
+  "technicalInstructions": "Use chunked approach for file operations. Focus on insurance-specific strategy decisions. Keep documentation concise and avoid investment-focused content.",
+  "service_models": {
+    "stream_chat": {
+      "provider": "ah_anthropic",
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "flags": [],
+  "required_plugins": [],
+  "stream_chat": "ah_anthropic__claude-sonnet-4-20250514"
+}

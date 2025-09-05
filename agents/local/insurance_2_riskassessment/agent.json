@@ -1,0 +1,31 @@
+{
+  "name": "insurance_2_riskassessment",
+  "description": "Insurance Risk Assessment",
+  "hashver": "ins02",
+  "commands": [
+    "task_result",
+    "complete_subtask",
+    "append",
+    "write",
+    "read",
+    "dir",
+    "execute_command",
+    "mkdir",
+    "think"
+  ],
+  "preferred_providers": [],
+  "thinking_level": "off",
+  "persona": "Assistant",
+  "recommended_plugins": [],
+  "instructions": "# Insurance Phase 2: Risk Assessment & Needs Analysis\n\nThis phase performs insurance-specific risk assessment and coverage needs analysis. Focus on identifying insurance gaps, calculating appropriate coverage amounts, and assessing affordability. Use streamlined analysis focused on insurance-specific calculations rather than complex mathematical modeling.\n\n## Technical Considerations\n- Use write() then append() for chunks (max 500 lines)\n- For Python analysis: write code to file first, then execute\n- Use absolute paths for all file operations\n- Mark subtasks as completed as you progress\n\n## Input and Analysis\n\nRead the /xfiles/soa/data/[client_surname]/insurance/inputs.md file from Phase 1. Focus only on insurance-relevant data.\n\n## Checklist\n\n- [ ] Read Insurance Input Data\n\n    Read the /xfiles/soa/data/[client_surname]/insurance/inputs.md file. Focus on health, occupation, existing coverage, and financial data relevant to insurance.\n\n- [ ] Calculate Insurance Needs Assessment\n\n    Calculate appropriate coverage amounts for:\n    - Life insurance needs (debts, income replacement, education costs)\n    - TPD coverage requirements\n    - Income protection needs (70-75% of income)\n    - Trauma coverage assessment\n    Use simple, insurance-specific calculations rather than complex modeling.\n\n- [ ] Assess Underwriting Considerations\n\n    Analyze health, occupation, and lifestyle factors that may affect underwriting:\n    - Medical conditions and implications\n    - Occupational risk assessment\n    - Lifestyle factor considerations\n    - Existing coverage limitations\n\n- [ ] Analyze Affordability\n\n    Calculate premium affordability based on client's financial situation:\n    - Income and surplus analysis\n    - Premium cost projections\n    - Tax implications of insurance premiums\n\n- [ ] Document Risk Assessment Results\n\n    Create comprehensive `/xfiles/soa/data/[client_surname]/insurance/analysis.md` file with insurance-specific analysis:\n    - Coverage needs calculations\n    - Underwriting considerations\n    - Affordability assessment\n    - Key insurance-specific findings\n    Use write() to start and append() for chunks (max 500 lines).\n\n## Output\n\nYour task output should be the absolute path of the `/xfiles/soa/data/[client_surname]/insurance/analysis.md` file.\n\n## Insurance-Specific Analysis Focus\n\n**Key Analysis Areas:**\n- Life insurance needs calculation (debts + income replacement + expenses)\n- Income protection coverage assessment\n- TPD and trauma coverage requirements\n- Underwriting risk assessment\n- Premium affordability analysis\n- Existing coverage gap analysis\n\n**Exclude:**\n- Investment portfolio analysis\n- Superannuation strategy\n- Complex financial modeling\n- Non-insurance financial planning\n\n## Analysis.md Structure\n\n```markdown\n# Insurance Risk Assessment - [Client Name]\n\n## Executive Summary\n[Key insurance findings and coverage recommendations]\n\n## Coverage Needs Analysis\n### Life Insurance Requirements\n- Debt coverage: $[amount]\n- Income replacement: $[amount]\n- Education funding: $[amount]\n- Total recommended: $[amount]\n\n### Income Protection\n- Monthly benefit required: $[amount]\n- Waiting period assessment\n- Benefit period analysis\n\n### Additional Coverage\n- TPD requirements: $[amount]\n- Trauma coverage: $[amount]\n\n## Underwriting Considerations\n- Health factors assessment\n- Occupation risk analysis\n- Lifestyle considerations\n- Existing coverage limitations\n\n## Affordability Assessment\n- Premium cost projections\n- Financial capacity analysis\n- Tax implications\n\n## Key Recommendations\n[Summary of insurance coverage recommendations]\n```\n",
+  "technicalInstructions": "Use chunked approach for file operations. For any Python analysis, write code to file first then execute. Keep sections concise and insurance-focused.",
+  "service_models": {
+    "stream_chat": {
+      "provider": "ah_anthropic",
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "flags": [],
+  "required_plugins": [],
+  "stream_chat": "ah_anthropic__claude-sonnet-4-20250514"
+}

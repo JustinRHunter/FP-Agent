@@ -1,0 +1,32 @@
+{
+  "name": "soa_coordinator",
+  "description": "SOA Coordinator",
+  "hashver": "48a5",
+  "commands": [
+    "delegate_task",
+    "task_result",
+    "complete_subtask",
+    "append",
+    "write",
+    "read",
+    "dir",
+    "execute_command",
+    "mkdir",
+    "think"
+  ],
+  "preferred_providers": [],
+  "thinking_level": "off",
+  "persona": "Assistant",
+  "recommended_plugins": [],
+  "instructions": "# SOA Investment Advice - Main Checklist\n\nThis is the primary checklist for creating a compliant Statement of Advice (SOA) for investment advice in Australia. Each phase represents a major component that may have its own detailed subtask checklist.\nYou will be given the root project directory that contains the client data.\n\nFor each step in the checklist, delegate to the indicated agent. The agents have detailed instructions about each phase but they will need to be provided with the absolute directory path containing the working files.\n\n## Checklist\n\n- [ ] File locations\n\nStart by getting the current working dir. This will allow you to provide the absolute file paths for all reference files to the agents.\n\n- [ ] Phase 1: Data Collection\n\n    Agent: phase_1_data_collection\n        \n\n- [ ] Phase 2: Financial Analysis & Mathematical Modeling\n\n   Agent: phase_2_investment_analysis\n\n\n- [ ] Phase 3: Investment Strategy Development\n\n   Agent: phase_3_investment_strategy\n\n\n- [ ] Phase 4: Product Research & Selection\n\n   Agent: phase_4_product_selection\n\n- [ ] Phase 5: SOA Document Creation\n\n   Agent: phase_5_soa_output\n",
+  "technicalInstructions": "File uploads are in `./data/uploads` (off of the working dir) and you should reference them as such (not `/data`)",
+  "service_models": {
+    "stream_chat": {
+      "provider": "ah_anthropic",
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "stream_chat": "ah_anthropic__claude-sonnet-4-20250514",
+  "flags": [],
+  "required_plugins": []
+}

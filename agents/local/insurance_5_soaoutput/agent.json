@@ -1,0 +1,31 @@
+{
+  "name": "insurance_5_soaoutput",
+  "description": "Insurance SOA Output",
+  "hashver": "1ed0",
+  "commands": [
+    "task_result",
+    "complete_subtask",
+    "append",
+    "write",
+    "read",
+    "dir",
+    "execute_command",
+    "mkdir",
+    "think"
+  ],
+  "preferred_providers": [],
+  "thinking_level": "off",
+  "persona": "Assistant",
+  "recommended_plugins": [],
+  "instructions": "# Insurance Phase 5: SOA Document Creation\n\nThis phase creates the complete insurance SOA document following ASIC-compliant structure with all mandatory disclosures. Focus on producing concise 15-20 page SOA specifically for insurance advice. Eliminate investment-focused content and streamline documentation while maintaining regulatory compliance.\n\n## Technical Considerations\n- Use write() then append() for chunks (max 400 lines per section)\n- Output one section at a time, marking subtasks as completed\n- Use absolute paths for all file operations\n- Keep content concise and insurance-focused\n\n**Note: be cautious about overrunning output length, you can always do more append() to avoid having to start over. Also be careful about output/command formatting**.\n\n## Input and Analysis\n\nRead the inputs.md, analysis.md, strategy.md, and /xfiles/soa/data/[client_surname]/insurance//xfiles/soa/data/[client_surname]/insurance/products.md files from previous phases.\n\n## Document Structure Checklist\n\n- [ ] Read All Input Files\n\n    Read all previous phase files to gather complete insurance analysis and recommendations.\n\n- [ ] Section 1: Cover Page and Introduction\n\n    Create professional cover page with:\n    - Adviser and licensee details\n    - Client information\n    - Advice date and validity period\n    - SOA purpose statement\n    Use write() to start /xfiles/soa/data/[client_surname]/insurance/soa.md file.\n\n- [ ] Section 2: Client's Insurance Objectives and Situation\n\n    Document insurance-specific fact-finding results:\n    - Client's insurance objectives\n    - Current insurance situation\n    - Health and occupation details\n    - Financial capacity for premiums\n    Use append() for this section.\n\n- [ ] Section 3: Scope of Insurance Advice\n\n    Define insurance advice scope:\n    - Coverage types addressed\n    - Exclusions with risk explanations\n    - Future advice arrangements\n    Use append() for concise scope definition.\n\n- [ ] Section 4: Summary of Insurance Recommendations\n\n    Provide bullet-point summary of key insurance recommendations:\n    - Coverage amounts and types\n    - Provider selections\n    - Implementation approach\n    Use append() for clear, concise summary.\n\n- [ ] Section 5: Insurance Needs Analysis\n\n    Summarize insurance needs assessment:\n    - Coverage gap analysis\n    - Risk assessment findings\n    - Affordability analysis\n    Use append() for streamlined analysis.\n\n- [ ] Section 6: Basis of Insurance Advice\n\n    Present rationale for insurance recommendations:\n    - Strategy development process\n    - Alternative options considered\n    - Best interests duty evidence\n    Use append() for concise rationale.\n\n- [ ] Section 7: Detailed Policy Recommendations\n\n    Present specific policy recommendations:\n    - Selected policies with features\n    - Cost analysis\n    - Underwriting considerations\n    Use append() for policy details.\n\n- [ ] Section 8: Important Insurance Information\n\n    Include insurance-specific disclosures:\n    - Underwriting process explanation\n    - Claims process information\n    - Policy replacement consequences\n    Use append() for required disclosures.\n\n- [ ] Section 9: Fees and Remuneration\n\n    Provide exact dollar fee disclosures:\n    - Premium costs\n    - Commission arrangements\n    - Conflict of interest disclosures\n    Use append() for transparent cost disclosure.\n\n- [ ] Section 10: Implementation and Next Steps\n\n    Outline insurance implementation process:\n    - Application steps\n    - Documentation requirements\n    - Follow-up arrangements\n    Use append() for clear next steps.\n\n## Output\n\nYour task output should be the absolute path of the `/xfiles/soa/data/[client_surname]/insurance/soa.md` file.\n\n## Insurance SOA Focus\n\n**Key Content Areas:**\n- Insurance-specific needs analysis\n- Coverage recommendations\n- Underwriting considerations\n- Premium cost disclosures\n- Policy feature explanations\n- Regulatory compliance for insurance\n\n**Exclude:**\n- Investment strategy content\n- Portfolio analysis\n- Superannuation investment advice\n- Complex mathematical modeling\n\n## Target Length: 15-20 pages\n\nEnsure the final SOA is concise and focused specifically on insurance advice, eliminating the verbosity that caused investment SOAs to reach 61 pages.",
+  "technicalInstructions": "Use chunked approach: write() initial section, then append() each subsequent section (max 500 lines per operation). Mark each section as completed subtask. Keep content insurance-focused and concise.",
+  "service_models": {
+    "stream_chat": {
+      "provider": "ah_anthropic",
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "flags": [],
+  "required_plugins": [],
+  "stream_chat": "ah_anthropic__claude-sonnet-4-20250514"
+}

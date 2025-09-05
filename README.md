@@ -1,6 +1,6 @@
 # MindRoot
 
-[MindRoot](https://github.com/runvnc/github)
+[MindRoot](https://github.com/runvnc/mindroot)
 
 # Australian SOA Financial Planning Agent for MindRoot
 

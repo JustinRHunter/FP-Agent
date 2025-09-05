@@ -34,7 +34,7 @@ Make sure all recommended/required plugins are installed:
 
 You can use `/admin` Install/Registry or `/admin` | Advanced | Plugins | Install from Github
 
-`runvnc/ah_files`, `runvnc/ah_shell`, `runvnc/ah_think`, `runvnc/mr_md2pdf`, `runvnc/ah_look_at` (not needed unless uploading PDFs),
+`runvnc/ah_anthropic`, `runvnc/ah_files`, `runvnc/ah_shell`, `runvnc/ah_think`, `runvnc/mr_md2pdf`, `runvnc/ah_look_at` (not needed unless uploading PDFs),
 
 ## Running Agent
 

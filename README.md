@@ -11,11 +11,13 @@ For each there is a coordinator and a set of subagents that handle subtasks.
 ## Insurance Agents
 
 Coordinator: `insurance_coordinator`
+
 Phases: `insurance_[N]..`
 
 ## Investment
 
 Coordinator: `soa_coordinator`
+
 Phases: `phase_[N]..`
 
 ## Install

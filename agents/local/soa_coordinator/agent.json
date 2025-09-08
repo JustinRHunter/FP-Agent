@@ -1,32 +1,35 @@
 {
   "name": "soa_coordinator",
   "description": "SOA Coordinator",
-  "hashver": "48a5",
+  "hashver": "7145",
   "commands": [
     "delegate_task",
     "task_result",
     "complete_subtask",
+    "execute_command",
+    "mkdir",
     "append",
     "write",
     "read",
     "dir",
-    "execute_command",
-    "mkdir",
-    "think"
+    "think",
+    "markdown_to_pdf",
+    "get_pdf_stats",
+    "examine_pdf"
   ],
   "preferred_providers": [],
   "thinking_level": "off",
   "persona": "Assistant",
   "recommended_plugins": [],
-  "instructions": "# SOA Investment Advice - Main Checklist\n\nThis is the primary checklist for creating a compliant Statement of Advice (SOA) for investment advice in Australia. Each phase represents a major component that may have its own detailed subtask checklist.\nYou will be given the root project directory that contains the client data.\n\nFor each step in the checklist, delegate to the indicated agent. The agents have detailed instructions about each phase but they will need to be provided with the absolute directory path containing the working files.\n\n## Checklist\n\n- [ ] File locations\n\nStart by getting the current working dir. This will allow you to provide the absolute file paths for all reference files to the agents.\n\n- [ ] Phase 1: Data Collection\n\n    Agent: phase_1_data_collection\n        \n\n- [ ] Phase 2: Financial Analysis & Mathematical Modeling\n\n   Agent: phase_2_investment_analysis\n\n\n- [ ] Phase 3: Investment Strategy Development\n\n   Agent: phase_3_investment_strategy\n\n\n- [ ] Phase 4: Product Research & Selection\n\n   Agent: phase_4_product_selection\n\n- [ ] Phase 5: SOA Document Creation\n\n   Agent: phase_5_soa_output\n",
+  "instructions": "# SOA Investment Advice - Main Checklist\n\nThis is the primary checklist for creating a compliant Statement of Advice (SOA) for investment advice in Australia. Each phase represents a major component that may have its own detailed subtask checklist.\nYou will be given the root project directory that contains the client data.\n\nFor each step in the checklist, delegate to the indicated agent. The agents have detailed instructions about each phase but they will need to be provided with the absolute directory path containing the working files.\n\n# Delegation\n\nCritical info to provide the agent when you delegate: absolute file path(s) for client data.\n\n\n## Checklist\n\n- [ ] File locations\n\nStart by getting the current working dir. This will allow you to provide the absolute file paths for all reference files to the agents.\n\nNote: when /xfiles/soa is referenced, that does not mean to make it relative to the working dir (it is an absolute path).\n\nYou do not need to analyze the input files, this is done by phase 1 which you delegate. \n\n\n- [ ] Phase 1: Data Collection\n\n    Agent: phase_1_data_collection\n        \n\n- [ ] Phase 2: Financial Analysis & Mathematical Modeling\n\n   Agent: phase_2_investment_analysis\n\n\n- [ ] Phase 3: Investment Strategy Development\n\n   Agent: phase_3_investment_strategy\n\n\n- [ ] Phase 4: Product Research & Selection\n\n   Agent: phase_4_product_selection\n\n- [ ] Phase 5: SOA Document Creation\n\n   Agent: phase_5_soa_output\n\n\n## Final Output and link\n\n\nYour task result should not include the SOA text, but rather ONLY be a link to the SOA PDF. To create this use the markdown to pdf conversion function and then copy to ./imgs/ (relative process WORKING dir!) and  your task result is markdown with with a short sentence explaining what it is and link to as /imgs (e.g. output markdown with a link to a relative URL e.g. \n[soa](/imgs/[surname]_insurance_soa.pdf)\n\n",
   "technicalInstructions": "File uploads are in `./data/uploads` (off of the working dir) and you should reference them as such (not `/data`)",
   "service_models": {
     "stream_chat": {
-      "provider": "ah_anthropic",
-      "model": "claude-sonnet-4-20250514"
+      "provider": "ah_openrouter",
+      "model": "anthropic/claude-sonnet-4"
     }
   },
-  "stream_chat": "ah_anthropic__claude-sonnet-4-20250514",
+  "stream_chat": "ah_openrouter__anthropic/claude-sonnet-4",
   "flags": [],
   "required_plugins": []
 }

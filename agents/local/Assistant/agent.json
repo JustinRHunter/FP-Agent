@@ -8,32 +8,30 @@
     "tell_and_continue",
     "wait_for_user_reply",
     "markdown_await_user",
+    "execute_command",
+    "mkdir",
+    "tree",
     "append",
     "write",
     "read",
     "dir",
-    "search_web",
-    "fetch_webpage",
-    "execute_command",
-    "mkdir",
-    "tree",
+    "think",
+    "task_complete",
     "examine_image",
     "get_pdf_stats",
-    "examine_pdf",
-    "think",
-    "task_complete"
+    "examine_pdf"
   ],
   "added_at": "2024-12-08T09:31:21.675628",
   "preferred_providers": [],
   "recommended_plugins": [],
   "service_models": {
     "stream_chat": {
-      "provider": "ah_anthropic",
-      "model": "claude-sonnet-4-20250514"
+      "provider": "ah_openrouter",
+      "model": "anthropic/claude-sonnet-4"
     }
   },
   "thinking_level": "off",
-  "stream_chat": "ah_anthropic__claude-sonnet-4-20250514",
+  "stream_chat": "ah_openrouter__anthropic/claude-sonnet-4",
   "required_plugins": [],
-  "hashver": "d818"
+  "hashver": "d5d7"
 }

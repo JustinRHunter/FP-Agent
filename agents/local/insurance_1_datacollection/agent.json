@@ -1,31 +1,34 @@
 {
   "name": "insurance_1_datacollection",
   "description": "Insurance Data Collection",
-  "hashver": "ins01",
+  "hashver": "c05f",
   "commands": [
     "task_result",
     "complete_subtask",
+    "execute_command",
+    "mkdir",
     "append",
     "write",
     "read",
     "dir",
-    "execute_command",
-    "mkdir",
-    "think"
+    "think",
+    "examine_image",
+    "get_pdf_stats",
+    "examine_pdf"
   ],
   "preferred_providers": [],
   "thinking_level": "off",
   "persona": "Assistant",
   "recommended_plugins": [],
-  "instructions": "# Insurance Phase 1: Data Collection & Input Processing\n\nThis phase processes questionnaire inputs and client information with focus on insurance-specific data: health, occupation, lifestyle, existing coverage, and risk factors. The fact-finding process documented here forms the legal foundation for demonstrating compliance with best interests and appropriateness duties for insurance advice.\n\n## Technical Considerations\n- Use write() to start files, then append() for chunks\n- Maximum 500 lines per append() operation\n- Use absolute paths for all file operations\n- Mark subtasks as completed as you progress\n- Use insurance-specific subdirectory: /xfiles/soa/data/[client_surname]/insurance/\n\n## Checklist\n\n- [ ] Create Insurance Directory Structure\n\n    Create directory `/xfiles/soa/data/[client_surname]/insurance/` for organizing insurance-specific files.\n    Copy any input fact finding and insurance-specific documents into /xfiles/soa/data/[client_surname]/insurance/ directory.\n    \n- [ ] Extract Insurance-Specific Data\n\n    Extract insurance-relevant data from questionnaires: health status, occupation details, lifestyle factors, existing insurance coverage, risk tolerance. Focus on sections from Personal_Fact_Find_Part5 (Insurance).\n    Your extracted data will go in the file `/xfiles/soa/data/[client_surname]/insurance/inputs.md`. \n    Use write() to start and then append() for each section (max 500 lines per chunk).\n    Include only insurance-relevant data: health, occupation, existing coverage, risk factors.\n    Exclude investment and superannuation data unless directly relevant to insurance.\n\n## Output\n\nYour task output should simply list the absolute file paths of created files.\n\n## Insurance-Specific Data Focus\n\n**Key Insurance Data Points:**\n- Health status and medical history\n- Occupation details and risk factors\n- Lifestyle factors (smoking, hobbies, travel)\n- Existing insurance coverage details\n- Dependents and family situation\n- Income and expense data for affordability assessment\n- Risk tolerance for insurance products\n\n**Exclude:**\n- Investment portfolio details\n- Superannuation investment strategies\n- Complex mathematical modeling\n- Non-insurance financial planning\n\n## File Structure Example\n\n```markdown\n# Insurance Data Input - [Client Name]\n\n## Health & Medical Information\n- [Health status summary]\n- [Medical conditions]\n- [Smoking status]\n\n## Occupation & Lifestyle\n- [Occupation details]\n- [Work-related risks]\n- [Lifestyle factors]\n\n## Existing Insurance Coverage\n- [Current policies summary]\n- [Coverage amounts]\n- [Premium costs]\n\n## Financial Capacity\n- [Income for affordability]\n- [Key expenses]\n- [Surplus for premiums]\n\n## Dependents & Family\n- [Dependent information]\n- [Family situation]\n```\n",
-  "technicalInstructions": "Use chunked approach for all file operations. Write initial section with write(), then use append() for subsequent chunks keeping under 500 lines each. All files go in /xfiles/soa/data/[client_surname]/insurance/ subdirectory.",
+  "instructions": "# Insurance Phase 1: Data Collection & Input Processing\n\nThis phase processes questionnaire inputs and client information with focus on insurance-specific data: health, occupation, lifestyle, existing coverage, and risk factors. The fact-finding process documented here forms the legal foundation for demonstrating compliance with best interests and appropriateness duties for insurance advice.\n\n## Technical Considerations\n- Use write() to start files, then append() for chunks\n- Maximum 500 lines per append() operation\n- Use absolute paths for all file operations\n- Mark subtasks as completed as you progress\n- Use insurance-specific subdirectory: /xfiles/soa/data/[client_surname]/insurance/\n\n## Checklist\n\n- [ ] Create Insurance Directory Structure\n\n    Create directory `/xfiles/soa/data/[client_surname]/insurance/` for organizing insurance-specific files.\n    Copy any input fact finding and insurance-specific documents into /xfiles/soa/data/[client_surname]/insurance/ directory.\n    \n- [ ] Extract Insurance-Specific Data\n\n    Extract insurance-relevant data from questionnaires: health status, occupation details, lifestyle factors, existing insurance coverage, risk tolerance. Focus on sections from Personal_Fact_Find_Part5 (Insurance).\n    Your extracted data will go in the file `/xfiles/soa/data/[client_surname]/insurance/inputs.md`. \n    Use write() to start and then append() for each section (max 500 lines per chunk).\n    Include only insurance-relevant data: health, occupation, existing coverage, risk factors.\n    Exclude investment and superannuation data unless directly relevant to insurance.\n    Do not add extra assumptions such as additional requirements if the client has stated the type of advice requested.\n\n## Output\n\nYour task output should simply list the absolute file paths of created files.\n\n## Insurance-Specific Data Focus\n\n**Key Insurance Data Points:**\n- Health status and medical history\n- Occupation details and risk factors\n- Lifestyle factors (smoking, hobbies, travel)\n- Existing insurance coverage details\n- Dependents and family situation\n- Income and expense data for affordability assessment\n- Risk tolerance for insurance products\n\n**Exclude:**\n- Investment portfolio details\n- Superannuation investment strategies\n- Complex mathematical modeling\n- Non-insurance financial planning\n\n## File Structure Example\n\n```markdown\n# Insurance Data Input - [Client Name]\n\n## Health & Medical Information\n- [Health status summary]\n- [Medical conditions]\n- [Smoking status]\n\n## Occupation & Lifestyle\n- [Occupation details]\n- [Work-related risks]\n- [Lifestyle factors]\n\n## Existing Insurance Coverage\n- [Current policies summary]\n- [Coverage amounts]\n- [Premium costs]\n\n## Financial Capacity\n- [Income for affordability]\n- [Key expenses]\n- [Surplus for premiums]\n\n## Dependents & Family\n- [Dependent information]\n- [Family situation]\n```\n",
+  "technicalInstructions": "Use chunked approach for all file operations. Write initial section with write(), then use append() for subsequent chunks keeping under 500 lines each. All files go in /xfiles/soa/data/[client_surname]/insurance/ subdirectory.\n\n## examine_pdf\n\nFor this command, do not render page images.",
   "service_models": {
     "stream_chat": {
-      "provider": "ah_anthropic",
-      "model": "claude-sonnet-4-20250514"
+      "provider": "ah_openrouter",
+      "model": "anthropic/claude-sonnet-4"
     }
   },
   "flags": [],
   "required_plugins": [],
-  "stream_chat": "ah_anthropic__claude-sonnet-4-20250514"
+  "stream_chat": "ah_openrouter__anthropic/claude-sonnet-4"
 }

@@ -1,0 +1,21 @@
+{
+  "name": "insurance_5_long_output",
+  "description": "Insurance 5 long output",
+  "hashver": "bb42",
+  "commands": [],
+  "preferred_providers": [],
+  "thinking_level": "off",
+  "persona": "Assistant",
+  "recommended_plugins": [],
+  "instructions": "# Insurance Phase 5: SOA Document Creation\n\nThis phase creates the complete insurance SOA document following ASIC-compliant structure with all mandatory disclosures. Focus on producing concise 15-20 page SOA specifically for insurance advice. Eliminate investment-focused content and streamline documentation while maintaining regulatory compliance.\n\n## Technical Considerations\n- Use write() then append() for chunks (max 400 lines per section)\n- Output one section at a time, marking subtasks as completed\n- Use absolute paths for all file operations\n- Keep content concise and insurance-focused\n\n**Note: be cautious about overrunning output length, you can always do more append() to avoid having to start over. Also be careful about output/command formatting**.\n\n## Input and Analysis\n\nRead the inputs.md, analysis.md, strategy.md, and products.md from /xfiles/soa/data/[client_surname]/insurance/ from previous phases.\n\n## Output Path\n\nThe output path should be the same directory as above, soa.md\n\n## Document Structure Checklist\n\n- [ ] Read All Input Files\n\n    Read all previous phase files to gather complete insurance analysis and recommendations.\n\n\n- [ ] Section 1: Cover Page and Introduction\n\n    Create professional cover page with:\n    - Adviser and licensee details\n    - Client information\n    - Advice date and validity period\n    - SOA purpose statement\n    Use write() to start /xfiles/soa/data/[client_surname]/insurance/soa.md file.\n\n- [ ] Section 2 Concise Recommendations\n\n   The client has stated that the full 10 sections of output below are quite excessive and can be repetitive. For this report, output only the recommendations in a concise, clear, and readable way. Do not include details that are unimportant; do include key details. Note that the client may have requested specific types of advice, and in that case you should not make assumptions about more comprehensive recommendations, although if you think there is something important missing then you can mention it briefly.\n\n\n# Task Output\n\nFor your output, provide the absolute file path of the output file.\n\n\n",
+  "technicalInstructions": "",
+  "service_models": {
+    "stream_chat": {
+      "provider": "ah_openrouter",
+      "model": "anthropic/claude-sonnet-4"
+    }
+  },
+  "flags": [],
+  "required_plugins": [],
+  "stream_chat": "ah_openrouter__anthropic/claude-sonnet-4"
+}
